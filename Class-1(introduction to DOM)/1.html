@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Say Hello</button>
+
+    <script>
+        // Selects the first <button> element in the document
+        const btn = document.querySelector('button')
+
+        // Adds an event listener to run code when the button is clicked
+        btn.addEventListener('click', function() {
+
+            // Creates a new <h4> element (not yet added to page)
+            const headingElement = document.createElement('h4')
+
+            // Sets the text inside the newly created element
+            headingElement.innerText = 'Hello'
+
+            // Logs the created element to the console (for debugging)
+            console.log(headingElement)
+
+            // Selects the <body> element from the document
+            const bodyElement = document.querySelector('body')
+
+            // Adds the <h4> element to the body (now visible on page)
+            bodyElement.appendChild(headingElement)
+        })
+    </script>
+</body>
+</html>
