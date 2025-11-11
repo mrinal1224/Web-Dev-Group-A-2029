@@ -25,27 +25,31 @@
     <button id="fixBtn">Fix List</button>
 
     <script>
-      // Fix the list by inserting the missing element using querySelectorAll and insertBefor
+      // Get the button element using its id
       const btn = document.getElementById("fixBtn");
-      console.log(btn);
+      console.log(btn); // Logs button element to console
 
+      // Add a click event listener to the button
       btn.addEventListener("click", function () {
+        
+        // Select the <ul> element from the document
         const myList = document.querySelector("ul");
 
+        // Get all <li> elements inside the <ul>
         const allItems = myList.querySelectorAll("li");
+        
+        // Access the element that currently contains "8" (index 6)
         const itemThatHas8 = allItems[6];
         console.log(itemThatHas8);
 
-        // creat the element for 7
-
+        // Create a new <li> element for number 7
         const li7 = document.createElement("li");
 
+        // Set the text inside <li> to "7"
         li7.innerText = "7";
 
-        // insertBefore
-        myList.insertBefore(li7 , itemThatHas8)
-
-
+        // Insert <li>7 before <li>8
+        myList.insertBefore(li7 , itemThatHas8);
       });
     </script>
   </body>
