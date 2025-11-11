@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +19,18 @@
   </body>
 
   <script>
-        
+    const btn = document.querySelector("button");
+
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("inActive")) {
+        btn.classList.remove("inActive");
+        btn.classList.add("active");
+        btn.innerText = 'I am Active'
+      } else {
+        btn.classList.remove("active");
+        btn.classList.add("inActive");
+        btn.innerText = 'I am Inactive'
+      }
+    });
   </script>
 </html>
