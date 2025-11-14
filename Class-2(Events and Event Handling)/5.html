@@ -40,7 +40,7 @@
     </style>
   </head>
   <body>
-    <div class = "card" data-color = "blue"></div>  
+    <div class = "card " data-color = "blue"></div>  
     <div class = "card" data-color = "red"></div>
     <div class = "card" data-color = "blue"></div>
     <div class = "card" data-color = "red"></div>
@@ -54,17 +54,29 @@
       // Q Write a script which fetches the data-color attribute of the card on 
       //double clicking on them and attaches the fetched class to that card.
       // Also changes the data-color attribute to "used"
-     const allCards = document.querySelectorAll('.card')
-     console.log(allCards)
+   
+    // Select all elements with the class "card"
+const allCards = document.querySelectorAll('.card')
+console.log(allCards)
 
-     for(let i=0 ; i<allCards.length ; i++){
-         allCards[i].addEventListener('dblclick' , function(e){
-           console.log(e)
-          const color = e.target.dataset.color
-          e.target.classList.add(color)
-         })
-     }
-  
+// Loop through each card
+for (let i = 0; i < allCards.length; i++) {
+
+  // Add a double-click event listener to each card
+  allCards[i].addEventListener('dblclick', function(e) {
+
+    // Get the value of the data-color attribute using getAttribute()
+    const color = e.target.getAttribute('data-color')
+
+    // Add a CSS class to the card matching the fetched color
+    // (this changes the background color via predefined classes)
+    e.target.classList.add(color)
+
+    // Update the data-color attribute to "used"
+    e.target.setAttribute('data-color', 'used')
+  })
+}
+
     
     </script>
   </body>
