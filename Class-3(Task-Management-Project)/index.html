@@ -1,52 +1,94 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanban Board Group-A</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@100..900&family=Sixtyfour+Convergence&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board-Class Work</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <!-- Toolbox (Navbar) -->
     <div class="toolbox-cont">
-      <!-- headings and logo -->
-      <div class="brand-section">
-        <div class="brand-title">
-          <h1><i class="fa-solid fa-list-check"></i>TaskFlow</h1>
+        <div class="brand-section">
+            <h1 class="brand-title">
+                <i class="fas fa-tasks"></i>
+                TaskFlow
+            </h1>
         </div>
-      </div>
-
-      <!-- filters -->
-
-      <div class="toolbox-priority-cont">
-        <span class="filter-label">Filter by Priority</span>
-
-        <div class="color-filters">
-          <div class="lightpink color"></div>
-          <div class="lightgreen color"></div>
-          <div class="lightblue color"></div>
-          <div class="black color"></div>
+        
+        <div class="toolbox-priority-cont">
+            <span class="filter-label">Filter by Priority:</span>
+            <div class="color-filters">
+                <div class="lightpink color" ></div>
+                <div class="lightgreen color" ></div>
+                <div class="lightblue color" ></div>
+                <div class="black color" ></div>
+            </div>
         </div>
-      </div>
 
-      <!-- Buttons -->
+        <div class="action-btn-cont">
+            <div class="add-btn" title="Add New Task">
+                <i class="fa-solid fa-plus"></i>
+                <span class="btn-text">Add Task</span>
+            </div>
 
-      <div class="action-btn-cont">
-        <div class="add-btn"><i class="fa-solid fa-plus"></i> Add</div>
-        <div class="remove-btn">Delete</div>
-      </div>
+            <div class="remove-btn" title="Delete Mode">
+                <i class="fa-solid fa-trash"></i>
+                <span class="btn-text">Delete</span>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <!-- Task Ticket -->
+    <div class="main-cont">
+        <!-- Dynamic tickets will be added here -->
+         <div class="ticket-cont" >
+         <div class="ticket-color" style="background-color: lightpink;" ></div>
+             <div class="ticket-id">12345</div>
+             <div  class="task-area">task Test</div>
+              <div class="ticket-lock">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              </div>
+    </div>
+
+    <div class="modal-cont">
+        <div class="modal-header">
+            <h2>Create New Task</h2>
+            <p>Enter your task details and select a priority level</p>
+        </div>
+        
+        <textarea class="textArea-cont" placeholder="Enter your task description..."></textarea>
+
+        <div class="priority-colors-container">
+            <span class="priority-label">Select Priority:</span>
+            <div class="priority-grid">
+                <div class="lightpink priority-color active" title="High Priority">
+                  <span>H</span>  
+                </div>
+                <div class="lightgreen priority-color" title="Medium Priority">
+                    <span>M</span> 
+                </div>
+                <div class="lightblue priority-color" title="Low Priority">
+                    <span>L</span>
+                </div>
+                <div class="black priority-color" title="Critical">
+                     <span>C</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <small>Press <kbd>Shift</kbd> to create task</small>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+    
+</body>
 </html>
