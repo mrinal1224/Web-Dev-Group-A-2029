@@ -1,24 +1,105 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-:root{
-    --primary-bg :#1a1d29;
+:root {
+  --primary-bg: #1a1d29;
 }
 
-body{
-font-family: "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  font-weight:500;
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
   font-style: normal;
 }
 
-.toolbox-cont{
-   background-color:var(--primary-bg);
-   height: 5rem;
+.toolbox-cont {
+  background-color: var(--primary-bg);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
 }
 
-.brand-section{
-    color : white
+.brand-section {
+  color: white;
 }
+
+.filter-label{
+    color: white;
+}
+
+.toolbox-priority-cont{
+ display: flex;
+ align-items: center;
+
+}
+
+.color-filters{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.color{
+    height: 40px;
+    width: 35px;
+    margin: 4px;
+    border-radius: 50%;
+}
+
+
+.lightpink{
+  background-color: lightpink;
+}
+
+.lightgreen{
+    background-color: lightgreen;
+}
+
+.lightblue{
+   background-color: lightblue; 
+}
+
+.black{
+    background-color: yellow;
+}
+
+.action-btn-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    
+}
+
+.add-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+    height: 3rem;
+    width: 4rem;
+    background-color: #32CD32;
+    border-radius: 20%;
+
+}
+
+
+
+.remove-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+    height: 3rem;
+    width: 4rem;
+    background-color: #D2042D;
+    border-radius: 20%;
+
+}
+
+
