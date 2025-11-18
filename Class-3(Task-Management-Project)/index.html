@@ -1,94 +1,102 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board-Class Work</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Toolbox (Navbar) -->
     <div class="toolbox-cont">
-        <div class="brand-section">
-            <h1 class="brand-title">
-                <i class="fas fa-tasks"></i>
-                TaskFlow
-            </h1>
+      <div class="brand-section">
+        <h1 class="brand-title">
+          <i class="fas fa-tasks"></i>
+          TaskFlow
+        </h1>
+      </div>
+
+      <div class="toolbox-priority-cont">
+        <span class="filter-label">Filter by Priority:</span>
+        <div class="color-filters">
+          <div class="lightpink color"></div>
+          <div class="lightgreen color"></div>
+          <div class="lightblue color"></div>
+          <div class="black color"></div>
         </div>
-        
-        <div class="toolbox-priority-cont">
-            <span class="filter-label">Filter by Priority:</span>
-            <div class="color-filters">
-                <div class="lightpink color" ></div>
-                <div class="lightgreen color" ></div>
-                <div class="lightblue color" ></div>
-                <div class="black color" ></div>
-            </div>
+      </div>
+
+      <div class="action-btn-cont">
+        <div class="add-btn" title="Add New Task">
+          <i class="fa-solid fa-plus"></i>
+          <span class="btn-text">Add Task</span>
         </div>
 
-        <div class="action-btn-cont">
-            <div class="add-btn" title="Add New Task">
-                <i class="fa-solid fa-plus"></i>
-                <span class="btn-text">Add Task</span>
-            </div>
-
-            <div class="remove-btn" title="Delete Mode">
-                <i class="fa-solid fa-trash"></i>
-                <span class="btn-text">Delete</span>
-            </div>
+        <div class="remove-btn" title="Delete Mode">
+          <i class="fa-solid fa-trash"></i>
+          <span class="btn-text">Delete</span>
         </div>
+      </div>
     </div>
 
     <!-- Task Ticket -->
     <div class="main-cont">
-        <!-- Dynamic tickets will be added here -->
-         <div class="ticket-cont" >
-         <div class="ticket-color" style="background-color: lightpink;" ></div>
-             <div class="ticket-id">12345</div>
-             <div  class="task-area">task Test</div>
-              <div class="ticket-lock">
-                <i class="fa-solid fa-lock"></i>
-              </div>
-              </div>
+      <!-- Dynamic tickets will be added here -->
+       <div class="ticket-cont">
+         <div class="ticket-color"></div>
+         <div class="ticket-id">1234567</div>
+         <div class="task-area">Radom Task</div>
+         <div class="ticket-lock">
+            <i class="fa-solid fa-lock"></i>
+         </div>
+       </div>
     </div>
 
     <div class="modal-cont">
-        <div class="modal-header">
-            <h2>Create New Task</h2>
-            <p>Enter your task details and select a priority level</p>
-        </div>
-        
-        <textarea class="textArea-cont" placeholder="Enter your task description..."></textarea>
+      <div class="modal-header">
+        <h2>Create New Task</h2>
+        <p>Enter your task details and select a priority level</p>
+      </div>
 
-        <div class="priority-colors-container">
-            <span class="priority-label">Select Priority:</span>
-            <div class="priority-grid">
-                <div class="lightpink priority-color active" title="High Priority">
-                  <span>H</span>  
-                </div>
-                <div class="lightgreen priority-color" title="Medium Priority">
-                    <span>M</span> 
-                </div>
-                <div class="lightblue priority-color" title="Low Priority">
-                    <span>L</span>
-                </div>
-                <div class="black priority-color" title="Critical">
-                     <span>C</span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <small>Press <kbd>Shift</kbd> to create task</small>
-            </div>
+      <textarea
+        class="textArea-cont"
+        placeholder="Enter your task description..."
+      ></textarea>
+
+      <div class="priority-colors-container">
+        <span class="priority-label">Select Priority:</span>
+        <div class="priority-grid">
+          <div class="lightpink priority-color active" title="High Priority">
+            <span>H</span>
+          </div>
+          <div class="lightgreen priority-color" title="Medium Priority">
+            <span>M</span>
+          </div>
+          <div class="lightblue priority-color" title="Low Priority">
+            <span>L</span>
+          </div>
+          <div class="black priority-color" title="Critical">
+            <span>C</span>
+          </div>
         </div>
+        <div class="modal-footer">
+          <small>Press <kbd>Shift</kbd> to create task</small>
+        </div>
+      </div>
     </div>
 
-  <script src="script.js"></script>
-    
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
