@@ -6,6 +6,9 @@ const addBtn = document.querySelector(".add-btn");
 const modalCont = document.querySelector(".modal-cont");
 const modalTaskArea = document.querySelector('.textArea-cont')
 const mainCont = document.querySelector('.main-cont')
+const allPriorityColors = document.querySelectorAll('.priority-color')
+
+
 
 
 // this section opens and closes the modal
@@ -53,3 +56,18 @@ function createTicket(ticketTask){
  mainCont.appendChild(ticketCont)
 
 }
+
+
+allPriorityColors.forEach(function(colorElem){
+  colorElem.addEventListener('click' , function(){
+    
+     allPriorityColors.forEach(function(priorityColor){
+        priorityColor.classList.remove("active")
+     })
+
+     colorElem.classList.add('active')
+  })
+})
+
+
+
