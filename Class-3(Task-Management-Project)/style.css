@@ -200,7 +200,7 @@ body {
     height: 6px;
     cursor: pointer;
     transition: var(--transition);
-    background-color: var(--color-high);
+  
 }
 
 .ticket-color:hover {

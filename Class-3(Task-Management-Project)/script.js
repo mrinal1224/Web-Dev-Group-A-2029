@@ -9,6 +9,9 @@ const mainCont = document.querySelector('.main-cont')
 const allPriorityColors = document.querySelectorAll('.priority-color')
 
 
+let ticketColor = 'lightpink'
+
+
 
 
 // this section opens and closes the modal
@@ -44,7 +47,7 @@ function createTicket(ticketTask){
   const ticketCont =   document.createElement('div')
   ticketCont.setAttribute('class' , 'ticket-cont')
 
- ticketCont.innerHTML= ` <div class="ticket-color"></div>
+ ticketCont.innerHTML= ` <div style="background-color:${ticketColor};" class="ticket-color"></div>
  <div class="ticket-id">1234567</div>
  <div class="task-area">${ticketTask}</div>
  <div class="ticket-lock">
@@ -64,8 +67,10 @@ allPriorityColors.forEach(function(colorElem){
      allPriorityColors.forEach(function(priorityColor){
         priorityColor.classList.remove("active")
      })
-
+    
      colorElem.classList.add('active')
+     const color =  colorElem.classList[0]
+     ticketColor = color
   })
 })
 
