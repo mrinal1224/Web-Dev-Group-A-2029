@@ -8,9 +8,10 @@ const modalTaskArea = document.querySelector(".textArea-cont");
 const mainCont = document.querySelector(".main-cont");
 const allPriorityColors = document.querySelectorAll(".priority-color");
 
-let closeLock =  'fa-lock'
-let openLock = 'fa-lock-open'
+let colorsArray = ["lightpink", "lightgreen", "lightblue", "black"];
 
+let closeLock = "fa-lock";
+let openLock = "fa-lock-open";
 
 let ticketColor = "lightpink";
 
@@ -44,7 +45,8 @@ function createTicket(ticketTask) {
   const ticketCont = document.createElement("div");
   ticketCont.setAttribute("class", "ticket-cont");
 
-  ticketCont.innerHTML = ` <div style="background-color:${ticketColor};" class="ticket-color"></div>
+  ticketCont.innerHTML = ` 
+  <div style="background-color:${ticketColor};" class="ticket-color"></div>
  <div class="ticket-id">1234567</div>
  <div class="task-area">${ticketTask}</div>
  <div class="ticket-lock">
@@ -52,9 +54,12 @@ function createTicket(ticketTask) {
  </div>`;
 
   mainCont.appendChild(ticketCont);
-  // handleLock
 
   handleLock(ticketCont);
+  // handleLock
+
+  // handleColor
+  handleColor(ticketCont);
 }
 
 allPriorityColors.forEach(function (colorElem) {
@@ -73,20 +78,42 @@ allPriorityColors.forEach(function (colorElem) {
 
 function handleLock(ticket) {
   const ticketLockConatainer = ticket.querySelector(".ticket-lock");
-  const ticketTaskArea = ticket.querySelector('.task-area')
-   
- const ticketLock = ticketLockConatainer.children[0]
+  const ticketTaskArea = ticket.querySelector(".task-area");
 
- ticketLock.addEventListener('click' , function(){
-   if(ticketLock.classList.contains(closeLock)){
-       ticketLock.classList.remove(closeLock)
-       ticketLock.classList.add(openLock)
-       ticketTaskArea.setAttribute('contenteditable' , 'true')
+  const ticketLock = ticketLockConatainer.children[0];
 
-   }else{
-    ticketLock.classList.remove(openLock)
-    ticketLock.classList.add(closeLock)
-    ticketTaskArea.setAttribute('contenteditable' , 'false')
-   }
- })
+  ticketLock.addEventListener("click", function () {
+    if (ticketLock.classList.contains(closeLock)) {
+      ticketLock.classList.remove(closeLock);
+      ticketLock.classList.add(openLock);
+      ticketTaskArea.setAttribute("contenteditable", "true");
+    } else {
+      ticketLock.classList.remove(openLock);
+      ticketLock.classList.add(closeLock);
+      ticketTaskArea.setAttribute("contenteditable", "false");
+    }
+  });
+}
+
+// handle the color
+
+function handleColor(ticket) {
+  const ticketColorBand = ticket.querySelector(".ticket-color");
+  ticketColorBand.addEventListener("click", function () {
+    let currentColor = ticketColorBand.style.backgroundColor;
+    // lightgreen
+    let currentColorIdx = colorsArray.findIndex(function (color) {
+      //lightgreen
+      return color == currentColor; // lightgreen
+    });
+
+    console.log(currentColorIdx);
+    const nextColorIdx = (currentColorIdx+1) % colorsArray.length
+   const nextColor = colorsArray[nextColorIdx]
+
+   ticketColorBand.style.backgroundColor = nextColor
+
+
+
+  });
 }
