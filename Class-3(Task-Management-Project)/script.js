@@ -73,6 +73,7 @@ allPriorityColors.forEach(function (colorElem) {
 
 function handleLock(ticket) {
   const ticketLockConatainer = ticket.querySelector(".ticket-lock");
+  const ticketTaskArea = ticket.querySelector('.task-area')
    
  const ticketLock = ticketLockConatainer.children[0]
 
@@ -80,9 +81,12 @@ function handleLock(ticket) {
    if(ticketLock.classList.contains(closeLock)){
        ticketLock.classList.remove(closeLock)
        ticketLock.classList.add(openLock)
+       ticketTaskArea.setAttribute('contenteditable' , 'true')
+
    }else{
     ticketLock.classList.remove(openLock)
     ticketLock.classList.add(closeLock)
+    ticketTaskArea.setAttribute('contenteditable' , 'false')
    }
  })
 }
