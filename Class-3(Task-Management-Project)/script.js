@@ -8,12 +8,24 @@ const modalTaskArea = document.querySelector(".textArea-cont");
 const mainCont = document.querySelector(".main-cont");
 const allPriorityColors = document.querySelectorAll(".priority-color");
 
+
+const ticketsFromLS = JSON.parse(localStorage.getItem('myTickets'))
+
+const ticketsArr  = ticketsFromLS
+
+function init(){
+      ticketsFromLS.forEach(function(ticket){
+        createTicket(ticket.ticketTask , ticket.ticketId , ticket.tickectColor)
+      })
+}
+init() // this function will retrive tickets
+
 let colorsArray = ["lightpink", "lightgreen", "lightblue", "black"];
 
 let closeLock = "fa-lock";
 let openLock = "fa-lock-open";
 
-let ticketColor = "lightpink";
+let ticketColorSelected = "lightpink";
 
 // this section opens and closes the modal
 addBtn.addEventListener("click", function () {
@@ -30,10 +42,17 @@ addBtn.addEventListener("click", function () {
 modalCont.addEventListener("keydown", function (e) {
   if (e.key == "Shift") {
     let task = modalTaskArea.value;
+    let id = shortid()
+    let color = ticketColorSelected
     // generate the ticket
-    createTicket(task);
+    createTicket(task , id , color);
     modalCont.style.display = "none";
     modalFlag = false;
+
+    ticketsArr.push({ticketTask:task , ticketId:id , tickectColor:color })
+    
+
+    localStorage.setItem("myTickets" , JSON.stringify(ticketsArr))
   }
 
   // we will do nothing
@@ -41,13 +60,13 @@ modalCont.addEventListener("keydown", function (e) {
 
 // function to create or generate the ticket
 
-function createTicket(ticketTask) {
+function createTicket(ticketTask , ticketId , ticketColor) {
   const ticketCont = document.createElement("div");
   ticketCont.setAttribute("class", "ticket-cont");
 
   ticketCont.innerHTML = ` 
   <div style="background-color:${ticketColor};" class="ticket-color"></div>
- <div class="ticket-id">1234567</div>
+ <div class="ticket-id">${ticketId}</div>
  <div class="task-area">${ticketTask}</div>
  <div class="ticket-lock">
     <i class="fa-solid fa-lock"></i>
@@ -70,7 +89,7 @@ allPriorityColors.forEach(function (colorElem) {
 
     colorElem.classList.add("active");
     const color = colorElem.classList[0];
-    ticketColor = color;
+    ticketColorSelected = color;
   });
 });
 
