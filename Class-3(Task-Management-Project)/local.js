@@ -11,5 +11,8 @@ const obj = {
 // getItem
 // removeItem
 
-localStorage.setItem('Person' , JSON.stringify(obj))
+const data = localStorage.setItem('Person' , JSON.stringify(obj))
+
+
+
 
