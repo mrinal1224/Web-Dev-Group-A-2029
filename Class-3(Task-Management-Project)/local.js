@@ -14,5 +14,13 @@ const obj = {
 const data = localStorage.setItem('Person' , JSON.stringify(obj))
 
 
+const datafromLS = JSON.parse(localStorage.getItem('Person'))
+
+console.log(datafromLS)
+
+
+
+
+
 
 
