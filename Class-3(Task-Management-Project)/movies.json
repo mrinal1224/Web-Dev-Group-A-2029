@@ -1,0 +1,17 @@
+[
+  {
+    "title": "The Batman",
+    "releaseDate": "23-04-2024",
+    "Genre": "Action",
+    "ratings": 9.7,
+    "currentlyInTheatres": false
+  },
+
+  {
+    "title": "Inception",
+    "releaseDate": "23-04-2010",
+    "Genre": "SCI-FI",
+    "ratings": 9.8,
+    "currentlyInTheatres": false
+  }
+]
