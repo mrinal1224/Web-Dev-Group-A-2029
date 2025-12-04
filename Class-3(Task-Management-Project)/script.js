@@ -7,18 +7,25 @@ const modalCont = document.querySelector(".modal-cont");
 const modalTaskArea = document.querySelector(".textArea-cont");
 const mainCont = document.querySelector(".main-cont");
 const allPriorityColors = document.querySelectorAll(".priority-color");
+const dueDatePicker = document.querySelector("#dueDate");
 
+console.log(dueDatePicker);
 
-const ticketsFromLS = JSON.parse(localStorage.getItem('myTickets'))
+const ticketsFromLS = JSON.parse(localStorage.getItem("myTickets")) || [];
 
-const ticketsArr  = ticketsFromLS
+const ticketsArr = ticketsFromLS;
 
-function init(){
-      ticketsFromLS.forEach(function(ticket){
-        createTicket(ticket.ticketTask , ticket.ticketId , ticket.tickectColor)
-      })
+function init() {
+  ticketsFromLS.forEach(function (ticket) {
+    createTicket(
+      ticket.ticketTask,
+      ticket.ticketId,
+      ticket.tickectColor,
+      ticket.dueDateValue
+    );
+  });
 }
-init() // this function will retrive tickets
+init(); // this function will retrive tickets
 
 let colorsArray = ["lightpink", "lightgreen", "lightblue", "black"];
 
@@ -42,17 +49,25 @@ addBtn.addEventListener("click", function () {
 modalCont.addEventListener("keydown", function (e) {
   if (e.key == "Shift") {
     let task = modalTaskArea.value;
-    let id = shortid()
-    let color = ticketColorSelected
+    let id = shortid();
+    let color = ticketColorSelected;
+    let dueDateValue = dueDatePicker.value;
+    console.log(dueDateValue);
+   const formattedDate =  formatDate(dueDateValue)
     // generate the ticket
-    createTicket(task , id , color);
+    createTicket(task, id, color, formattedDate);
     modalCont.style.display = "none";
     modalFlag = false;
+    modalTaskArea.value = "";
 
-    ticketsArr.push({ticketTask:task , ticketId:id , tickectColor:color })
-    
+    ticketsArr.push({
+      ticketTask: task,
+      ticketId: id,
+      tickectColor: color,
+      ticketDueDate: dueDateValue,
+    });
 
-    localStorage.setItem("myTickets" , JSON.stringify(ticketsArr))
+    localStorage.setItem("myTickets", JSON.stringify(ticketsArr));
   }
 
   // we will do nothing
@@ -60,7 +75,7 @@ modalCont.addEventListener("keydown", function (e) {
 
 // function to create or generate the ticket
 
-function createTicket(ticketTask , ticketId , ticketColor) {
+function createTicket(ticketTask, ticketId, ticketColor, dueDate) {
   const ticketCont = document.createElement("div");
   ticketCont.setAttribute("class", "ticket-cont");
 
@@ -68,6 +83,7 @@ function createTicket(ticketTask , ticketId , ticketColor) {
   <div style="background-color:${ticketColor};" class="ticket-color"></div>
  <div class="ticket-id">${ticketId}</div>
  <div class="task-area">${ticketTask}</div>
+ <div>${dueDate}</div>
  <div class="ticket-lock">
     <i class="fa-solid fa-lock"></i>
  </div>`;
@@ -127,12 +143,34 @@ function handleColor(ticket) {
     });
 
     console.log(currentColorIdx);
-    const nextColorIdx = (currentColorIdx+1) % colorsArray.length
-   const nextColor = colorsArray[nextColorIdx]
+    const nextColorIdx = (currentColorIdx + 1) % colorsArray.length;
+    const nextColor = colorsArray[nextColorIdx];
 
-   ticketColorBand.style.backgroundColor = nextColor
-
-
-
+    ticketColorBand.style.backgroundColor = nextColor;
   });
+}
+
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sept",
+  "oct",
+  "Nov",
+  "Dec",
+];
+
+function formatDate(duedate) {
+  const t = new Date(duedate);
+    const year = t.getFullYear();
+  const monthIndex = t.getMonth();
+  const month = months[monthIndex];
+  console.log(month);
+  const date = t.getDate();
+  return `${date}/${month}/${year}`;
 }
