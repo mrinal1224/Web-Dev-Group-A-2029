@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .grandParent {
+        width: 200px;
+        height: 200px;
+        border: 3px solid red;
+      }
+
+      .parent {
+        width: 120px;
+        height: 120px;
+        border: 3px solid blue;
+      }
+
+      .child {
+        width: 70px;
+        height: 70px;
+        border: 3px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandParent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+
+
+   
+
+    <script>
+      const gp = document.querySelector(".grandParent");
+      const p = document.querySelector(".parent");
+      const c = document.querySelector(".child");
+    //   const body = document.querySelector('body')
+
+      gp.addEventListener("click", function () {
+        console.log("Grand Parent Clicked");
+      }, true );
+      // useCapture - true/false - default - false
+      // true - capturing enabled
+
+      p.addEventListener("click", function () {
+        console.log(" Parent Clicked");
+      } , true);
+
+      c.addEventListener("click", function () {
+        console.log("child clicked");
+      } , true);
+
+    //   body.addEventListener("click", function () {
+    //     console.log("body element clicked");
+    //   });
+    </script>
+  </body>
+</html>
