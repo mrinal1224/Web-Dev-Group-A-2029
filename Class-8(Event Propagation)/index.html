@@ -44,17 +44,20 @@
 
       gp.addEventListener("click", function () {
         console.log("Grand Parent Clicked");
-      }, true );
+      }, false );
       // useCapture - true/false - default - false
       // true - capturing enabled
 
-      p.addEventListener("click", function () {
+      p.addEventListener("click", function (e) {
         console.log(" Parent Clicked");
-      } , true);
+        e.stopPropagation()
+      } , false);
 
-      c.addEventListener("click", function () {
+      c.addEventListener("click", function (e) {
         console.log("child clicked");
-      } , true);
+
+      
+      } , false);
 
     //   body.addEventListener("click", function () {
     //     console.log("body element clicked");
