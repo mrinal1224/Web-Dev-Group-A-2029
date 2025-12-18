@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .parent {
+        width: 700px;
+        height: 700px;
+        border: 3px solid red;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        border: 3px solid blue;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+    </div>
+
+    <button>Add a Box</button>
+  </body>
+
+  <script>
+    // when I click on any box the number of
+    //that box should come on the console
+
+    const parent = document.querySelector('.parent')
+
+    parent.addEventListener('click' , function(e){
+        console.log(e.target.innerText)
+    })
+
+   
+
+  
+
+    //
+
+    const btn = document.querySelector("button");
+
+    btn.addEventListener("click", function () {
+      const box = document.createElement("div");
+      box.setAttribute("class", "child");
+      box.innerText = 6
+
+      const parent = document.querySelector(".parent");
+      parent.appendChild(box);
+    });
+  </script>
+</html>
