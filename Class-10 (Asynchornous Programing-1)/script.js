@@ -20,8 +20,8 @@ function sayBye() {
 
 // setTimeout
 
-setTimeout(sayHello);
-setTimeout(sayBye);
+setTimeout(sayHello , 6000);
+setTimeout(sayBye  , 3000);
 
 console.log(b); // 7
 
