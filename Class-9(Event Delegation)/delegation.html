@@ -39,7 +39,10 @@
     const parent = document.querySelector('.parent')
 
     parent.addEventListener('click' , function(e){
-        console.log(e.target.innerText)
+        if(e.target.classList.contains('child')){
+            console.log(e.target.innerText)
+        }
+        
     })
 
    
