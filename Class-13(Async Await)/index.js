@@ -26,7 +26,7 @@ function serveOrder() {
   placeOrder("coffee", function (orderPlaced) {
     processOrder(orderPlaced, function (finalOrder) {
       generateBill(function (billData) {
-        // Now you wil get stuck in callback Hell
+        // Now you will get stuck in callback Hell
       });
     });
   });
