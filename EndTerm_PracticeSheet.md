@@ -620,9 +620,6 @@ async function safeExecute(fn) {
 ---
 
 
-
----
-
 ## ✅ ASSIGNMENT 16: Delayed Order Confirmation (Callback)
 
 ### Title
