@@ -619,8 +619,7 @@ async function safeExecute(fn) {
 
 ---
 
-Great — continuing with the **same exam-ready depth and clarity**.
-Below are **Assignments 16–30**, all **new scenarios**, **no repetition**, and written so students clearly understand *why* async is needed, not just *how* to code it.
+
 
 ---
 
