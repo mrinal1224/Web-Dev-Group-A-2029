@@ -52,12 +52,11 @@ Promise.all([fetchUserData(), fetchUserPosts(), fetchUserComments()])
     console.log(err);
   });
 
-  // Promises are getting executed - parallely - LibUv
-  // if one promise fails the entire operation fails - 
-  // Applications - Paymet gateways
+// Promises are getting executed - parallely - LibUv
+// if one promise fails the entire operation fails -
+// Applications - Paymet gateways
 
-
-  Promise.allSettled([fetchUserData(), fetchUserPosts(), fetchUserComments()])
+Promise.allSettled([fetchUserData(), fetchUserPosts(), fetchUserComments()])
   .then(function (result) {
     console.log(result[0].value);
   })
@@ -65,5 +64,6 @@ Promise.all([fetchUserData(), fetchUserPosts(), fetchUserComments()])
     console.log(err);
   });
 
-  // Promises are getting executed - parallely - LibUv
-//   if one promise fails it does not effects other promises
+// Promises are getting executed - parallely - LibUv
+//  if one promise fails it does not effects other promises
+// Social media data which does not depend on each other
