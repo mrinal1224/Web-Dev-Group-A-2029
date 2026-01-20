@@ -19,7 +19,7 @@ function fetchUserData() {
   function fetchUserComments() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        let success = Math.random() > 1;
+        let success = Math.random() > 0;
         if (success) {
           resolve(["Nice!", "Interesting post", "Subscribed!"]);
         } else {
@@ -28,3 +28,5 @@ function fetchUserData() {
       }, 800);
     });
   }
+
+  // Promise Chaining and Handle all these PROMISES
