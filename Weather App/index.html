@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App Class Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-card">
+        <div class="weather">
+          <div class="temp-section">
+            <div class="temp">20°</div>
+            <div class="temp-unit">Celsius</div>
+          </div>
+          <div class="time_location">
+            <p class="location">Mumbai</p>
+            <span class="datetime">Monday, Dec 18 • 2:30 PM</span>
+          </div>
+          <div class="weather_condition">
+            <div class="weather-icon">
+              <img src="">
+            </div>
+            <span class="condition">Sunny</span>
+          </div>
+        </div>
+        
+        <!-- Additional weather details -->
+        <div class="weather-details">
+          <div class="detail-item">
+            <span class="label">Feels like</span>
+            <span class="value">24°</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Humidity</span>
+            <span class="value">68%</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Wind</span>
+            <span class="value">12 km/h</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Visibility</span>
+            <span class="value">10 km</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">UV Index</span>
+            <span class="value">7</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Pressure</span>
+            <span class="value">1013 hPa</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="search-nav">
+        <form class="search-form">
+          <div class="search-container">
+            <input type="text" placeholder="Search for a location..." class="searchField"/>
+            <button type="submit" class="search-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </nav>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
